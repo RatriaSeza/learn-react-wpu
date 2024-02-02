@@ -18,6 +18,15 @@
 
 			function Homepage() {
 				const students = ['Satria', 'Reza', 'Ramadhan'];
+        const [likes, setLikes] = React.useState(0);
+
+        function incLikes() {
+          setLikes(likes + 1)
+        }
+
+        function decLikes() {
+          setLikes(likes - 1)
+        }
 
 				return (
 					<>	
@@ -29,6 +38,9 @@
 								))
 							}
 						</ul>
+            <h3>Total likes: {likes}</h3>
+            <button onClick={incLikes}>like (+)</button>
+            <button onClick={decLikes}>Like (-)</button>
 					</>
 				);
 			}
